@@ -1,0 +1,140 @@
+{
+    "problem_type": "classification",
+    "modelName": "classification_breast_cancer",
+    "modelVersion": "4",
+    "target_feature": "diagnosis",
+    "train_ratio": 0.8,
+    "optimization_param": {
+        "iterations": 100,
+        "trainTestCVSplit": 5,
+        "geneticparams": {
+            "n_population": 50,
+            "crossover_proba": 0.5,
+            "mutation_proba": 0.2,
+            "crossover_independent_proba": 0.5,
+            "mutation_independent_proba": 0.05,
+            "tournament_size": 3,
+            "n_gen_no_change": 10
+        }
+    },
+    "train_features": [
+        "radius_mean",
+        "texture_mean",
+        "perimeter_mean",
+        "area_mean",
+        "smoothness_mean",
+        "compactness_mean",
+        "concavity_mean",
+        "concave points_mean",
+        "symmetry_mean",
+        "fractal_dimension_mean",
+        "radius_se",
+        "texture_se",
+        "perimeter_se",
+        "area_se",
+        "smoothness_se",
+        "compactness_se",
+        "concavity_se",
+        "concave points_se",
+        "symmetry_se",
+        "fractal_dimension_se",
+        "radius_worst",
+        "texture_worst",
+        "perimeter_worst",
+        "area_worst",
+        "smoothness_worst",
+        "compactness_worst",
+        "concavity_worst",
+        "concave points_worst",
+        "symmetry_worst",
+        "fractal_dimension_worst"
+    ],
+    "scoring_criteria": "recall",
+    "search_space": [
+        {
+            "algo": {
+                "XGBClassifier": "xgboost"
+            },
+            "param": {
+                "tree_method": [
+                    "hist"
+                ],
+                "n_estimators": [
+                    40,
+                    60,
+                    80,
+                    100,
+                    120,
+                    140
+                ],
+                "max_depth": [
+                    4,
+                    5,
+                    6
+                ],
+                "gamma": [
+                    0.25,
+                    0.8333333333333334,
+                    1.4166666666666667,
+                    2.0
+                ],
+                "min_child_weight": [
+                    0.01,
+                    0.014444444444444444,
+                    0.01888888888888889,
+                    0.02333333333333333,
+                    0.027777777777777776,
+                    0.03222222222222222,
+                    0.03666666666666667,
+                    0.04111111111111111,
+                    0.04555555555555556,
+                    0.05
+                ],
+                "subsample": [
+                    0.8,
+                    0.9,
+                    1.0
+                ],
+                "colsample_bytree": [
+                    0.8,
+                    0.9,
+                    1.0
+                ],
+                "learning_rate": [
+                    0.01,
+                    0.0325,
+                    0.05500000000000001,
+                    0.0775,
+                    0.1
+                ],
+                "reg_alpha": [
+                    0.01,
+                    11.12,
+                    22.23,
+                    33.339999999999996,
+                    44.449999999999996,
+                    55.559999999999995,
+                    66.67,
+                    77.78,
+                    88.89,
+                    100.0
+                ],
+                "reg_lambda": [
+                    0.01,
+                    11.12,
+                    22.23,
+                    33.339999999999996,
+                    44.449999999999996,
+                    55.559999999999995,
+                    66.67,
+                    77.78,
+                    88.89,
+                    100.0
+                ],
+                "random_state": [
+                    42
+                ]
+            }
+        }
+    ]
+}
